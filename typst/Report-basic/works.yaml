@@ -1,0 +1,30 @@
+textbook:
+  type: Book
+  title: 基礎科学実験 A (物理学実験) 2025年度版
+  author: 電気通信大学共通教育部自然科学部会 (物理)
+  publisher: 学術図書出版
+  date: 2025
+  page-range: 84-89
+
+rikanempyo:
+  type: Book
+  title: 理科年表
+  author: 国立天文台
+  publisher: 丸善
+  date: 2025
+  
+zuroku:
+  type: Book
+  title: 新課程　フォトサイエンス　物理図録
+  author: 数研出版編集部
+  publisher: 数研出版
+  date: 2022
+  page-range: 90
+
+hp:
+  type: Web
+  title: ワープロでレポートを書く際の注意
+  author: 電気通信大学共通教育物理教室
+  url: 
+    value: http://physics.e-one.uec.ac.jp/materials/report_sample_v4.pdf
+    date: 2025-06-01
