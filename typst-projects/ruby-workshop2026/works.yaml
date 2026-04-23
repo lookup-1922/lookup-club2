@@ -1,0 +1,31 @@
+textbook:
+  type: Book
+  title: 基礎プログラミングおよび演習
+  author: 電気通信大学共通教育部情報部会
+  publisher: 学術図書出版
+  edition: 6
+
+johoI:
+  type: Book
+  title: 高等学校 情報I
+  author: 坂村健
+  publisher: 数研出版
+  date: 2022
+  
+sukkiri_java:
+  type: Book
+  title: スッキリわかるJava入門
+  author: 
+    - 中山清喬
+    - 国本大悟
+  edition: 3
+  publisher: インプレス
+  date: 2019
+
+ruby_reference:
+  type: Web
+  title: オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル
+  author: 
+  url: 
+    value: https://docs.ruby-lang.org/ja/latest/doc/index.html
+    date: 2026-03-22
