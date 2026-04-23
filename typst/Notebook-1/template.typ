@@ -77,41 +77,46 @@
   body
 }
 
-// タイトルブロックの設定
-#let title-block(title, author-affiliation, author-name, make-date, update-date) = {
-  // 関数を定義
-  // 日付をパースする関数
-  let parse-ymd(date) = (
-    if date != "" {
-      date.split("-")
-    } else  {""}
-  )
-  // データが空でなければ表示する関数
-  let print-if-not-empty(data) = (
-    if data != "" [
-      #text(font: font.sans, weight: font.sans-weight, data)\
-    ] else []
-  )
-  // 日付を表示する関数
-  let print-date(date, caption) = (
-    if date != "" and date.at(2) != "00" [
-      #text(font: font.sans, weight: font.sans-weight, date.at(0) + "年" + date.at(1) + "月" + date.at(2) + "日" + caption)\
-    ]
-  )
-  
-  // データの前処理
-  let make-date = parse-ymd(make-date)
-  let update-date = parse-ymd(update-date)
-  
-  align(center)[
+#let maketitle(
+  title: "",
+  authors: "",
+  date: datetime.today().display("[year]年[month]月[day]日"),
+  abstract: [],
+  keywords: (),
+) = {
+  set document(title: title, author: authors, date: auto, keywords: keywords)
+
+  place(top + center, scope: "parent", float: true)[
+    #set text(font: font.sans, weight: font.sans-weight)
+    #set align(center)
+    
+    // タイトルの表示
     #text(font: font.sans, size: 1.5em, weight: font.sans-weight, title)\
-    // 所属組織の表示
-    #print-if-not-empty(author-affiliation)
     // 名前の表示
-    #print-if-not-empty(author-name)
-    // 作成日の設定
-    #print-date(make-date, "作成")
-    // 更新日の設定
-    #print-date(update-date, "更新")
+    #if authors != "" [#text(authors)\ ] else []
+    // 日付の表示
+    #date
+    #if abstract != [] {
+      block(width: 90%)[
+        #set text(0.9em, font: font.serif)
+        概要
+        #align(left)[#abstract]
+      ]
+    }
   ]
+}
+
+#let noindent(body) = {
+  set par(first-line-indent: 0em)
+  body
+}
+
+#let my-bibliography(file-name) = {
+  set text(lang: "en")
+  bibliography(
+    file-name,
+    title: "参考文献",
+    full: true,
+  )
+  set text(lang: "ja")
 }
